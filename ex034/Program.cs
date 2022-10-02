@@ -11,14 +11,7 @@ int[] array = GetArray(sizeArr, minValue, maxValue);
 Console.Write("Сгенерирован следующий массив: ");
 Console.WriteLine(String.Join(" ", array));
 
-int evenCount = 0;
-
-for (int i = 0; i < array.Length; i++){
-if (array[i] %2 == 0){
-evenCount++;
-}
-}
-Console.WriteLine($"Количество четных элементов созданного массива составляет {evenCount}");
+Console.WriteLine($"Количество четных элементов созданного массива составляет {EvenCount(array)}");
 
 
 int[] GetArray(int size, int minValue, int maxValue)
@@ -31,3 +24,13 @@ res[i] = new Random().Next(minValue, maxValue + 1);
 return res;
 }
 
+int EvenCount(int[] array){
+int evenCount = 0;
+
+for (int i = 0; i < array.Length; i++){
+if (array[i] %2 == 0){
+evenCount++;
+}
+}
+return evenCount;
+}
